@@ -7,7 +7,7 @@
  */
 
 // Initialize the appliaction path and autoloading
-defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
+defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../../'));
 set_include_path(implode(PATH_SEPARATOR, array(APPLICATION_PATH . '/../library/', get_include_path(),)));
 require_once 'Zend/Loader/Autoloader.php';
 Zend_Loader_Autoloader::getInstance();
@@ -61,7 +61,7 @@ if (file_exists($dbFile)) {
 
 // this block executes the actual statements that were loaded from the schema file.
 try {
-    $schemaSql = file_get_contents(dirname(__FILE___) . '/schema.sqlite.sql');
+    $schemaSql = file_get_contents(dirname(__FILE__) . '/schema.sqlite.sql');
     // use the connection directly to load sql in batches
     $dbAdapter->getConnection()->exec($schemaSql);
     chmod($dbFile, 0666);
