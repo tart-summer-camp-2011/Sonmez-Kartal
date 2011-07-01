@@ -36,7 +36,7 @@ $withData   = $getopt->getOption('w');
 $env        = $getopt->getOption('e');
 defined('APPLICATION_ENV') || define('APPLICATION_ENV', (null == $env) ? 'development' : $env);
 
-// Initialize Zend_Appliaction
+// Initialize Zend_Application
 $application = new Zend_Application(APPLICATION_ENV, APPLICATION_PATH . '/configs/application.ini');
 
 $bootstrap = $application->getBootstrap();

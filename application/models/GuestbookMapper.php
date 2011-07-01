@@ -19,7 +19,7 @@ class Application_Model_GuestbookMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Appliaction_Model_DbTable_Guestbook');
+            $this->setDbTable('Application_Model_DbTable_Guestbook');
         }
         return $this->_dbTable;
     }
