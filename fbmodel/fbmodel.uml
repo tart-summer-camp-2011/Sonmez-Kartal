@@ -1,0 +1,138 @@
+@startuml
+
+class Account {
+  Account[] friends
+  FriendList[] friendLists
+  boolean active
+  int[] networks
+  int[] notifications
+  mobile
+  int language
+  AccountSecurityPolicy accountSecurityPolicy
+  PrivacyPolicy privacyPolicy
+}
+Account "1" *-- "1" UserInfo
+Account "1" *-- "1" Profile
+Account "1" *-- "*" LinkedAccount
+Account "1" *-- "1" SecurityQuestion
+
+class FriendList {
+  name
+  Account[] friends
+}
+
+class AccountSecurityPolicy {
+  boolean secureBrowsing
+  int[] notifications
+  boolean loginApproval
+}
+
+class AccountActivity {
+  DateTime lastAccessed
+  string location
+  string deviceType
+}
+
+class UserInfo {
+  string username
+  sha1sum passwordHash
+  string name
+  string email
+}
+
+class Profile {
+  currentCity
+  hometown
+  sex
+  DateTime birthday
+  string[] languages
+  string aboutMe
+  Image profilePicture
+  Image profilePictureThumbnail
+  ContactInformation contactInformation
+
+  PhotoAlbum[] photoAlbums
+  Notes[] notes
+}
+
+class ProfileRelationship {
+  relationshipStatus
+  Familymember[] family
+}
+
+class FamilyMember {
+  Account account
+  relation
+}
+
+class ContactInformation {
+  string[] emails
+  IMScreenName[] imScreenNames
+  string website
+}
+
+class IMScreenName {
+  string service
+  string screenName
+}
+
+class Note {
+  title
+  body
+  tags
+  privacy
+}
+
+class Wall {
+  boolean friendsCanPost
+  int[] hiddenStories
+}
+
+class PhotoAlbum {
+  name
+  Image[] images
+  privacy
+}
+
+class FeedItem {
+  Account poster
+  Content content
+  DateTime timestamp
+  Comment[] comments
+  Account[] likers
+}
+
+class Comment {
+  string comment
+  Account[] likers
+}
+
+class LinkedAccount {
+  service
+  username
+  password
+}
+
+class SecurityQuestion {
+  question
+  answer
+}
+
+class Event {
+  DateTime time
+  Page location
+  Account creator
+  string moreInfo
+  Wall wall
+  Account[] attendees
+  Image profileImage
+  privacy
+}
+
+class Page {
+  string name
+  Account[] likers
+  privacy
+}
+
+@enduml
