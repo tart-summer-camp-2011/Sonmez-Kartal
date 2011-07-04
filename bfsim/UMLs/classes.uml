@@ -1,0 +1,39 @@
+@startuml
+
+title <b>B</b>attle<b>F</b>ield <b>Sim</b>ulator
+
+interface ArmyInterface {
+  + setAttackPower($power)
+  + attackTarget($target)
+  + takeShot($power)
+}
+
+class SoldierAbstract {
+  # $_life
+  # $_country
+  # $_attackPower
+
+  + getLife()
+  # setLife($life)
+  + getCountry()
+  # setCountry($country)
+  + isDead()
+}
+ArmyInterface <|.. SoldierAbstract
+
+class Sergeant {
+  - __construct($country, $life)
+}
+SoldierAbstract <|-- Sergeant
+
+interface NavyInterface {
+  + swim()
+}
+
+class Marine {
+  - __construct($country, $life)
+}
+SoldierAbstract <|-- Marine
+NavyInterface <|.. Marine
+
+@enduml
