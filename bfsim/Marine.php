@@ -5,11 +5,11 @@
  *
  * @author Sönmez Kartal <sonmez.kartal@tart.com.tr>
  */
-class Marine extends SoldierAbstract implements NavyInterface {
-    public function __construct($country, $life)
+class Marine extends SoldierAbstract implements NavyInterface
+{
+    public function __construct($life, $attackPower)
     {
-        $this->_country = $country;
-        $this->_life = $life;
+        parent::__construct($life, $attackPower);
         echo 'A new Marine recruited.' . PHP_EOL;
     }
     

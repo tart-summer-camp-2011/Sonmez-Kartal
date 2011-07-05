@@ -4,7 +4,8 @@
  *
  * @author Sönmez Kartal <sonmez.kartal@tart.com.tr>
  */
-interface NavyInterface {
+interface NavyInterface
+{
     public function swim();
 }
 

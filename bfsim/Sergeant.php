@@ -5,11 +5,11 @@
  *
  * @author Sönmez Kartal <sonmez.kartal@tart.com.tr>
  */
-class Sergeant extends SoldierAbstract {
-    public function __construct($country, $life)
+class Sergeant extends SoldierAbstract
+{
+    public function __construct($life, $attackPower)
     {
-        $this->_country = $country;
-        $this->_life = $life;
+        parent::__construct($life, $attackPower);
         echo 'A new Sergeant is recruited.' . PHP_EOL;
     }
 }
